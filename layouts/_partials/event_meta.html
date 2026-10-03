@@ -1,0 +1,12 @@
+{{- /* Renders date, time and location of an event page. */ -}}
+{{- $start := time.AsTime .Params.eventDate }}
+<span>
+  {{- $start | time.Format ":date_full" }}, {{ $start | time.Format ":time_short" }}
+  {{- with .Params.eventEnd }}
+  {{- $end := time.AsTime . }}
+  {{- if eq ($start.Format "2006-01-02") ($end.Format "2006-01-02") }} – {{ $end | time.Format ":time_short" }}
+  {{- else }} – {{ $end | time.Format ":date_full" }}, {{ $end | time.Format ":time_short" }}
+  {{- end }}
+  {{- end }}
+</span>
+{{- with .Params.location }}&nbsp;·&nbsp;<span>{{ . }}</span>{{ end }}

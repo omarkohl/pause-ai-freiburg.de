@@ -1,0 +1,8 @@
+- id: upcoming_events
+  translation: "Upcoming events"
+- id: past_events
+  translation: "Past events"
+- id: no_upcoming_events
+  translation: "No events are planned right now. Check back soon!"
+- id: all_events
+  translation: "All events"

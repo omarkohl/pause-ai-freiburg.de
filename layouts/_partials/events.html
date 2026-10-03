@@ -1,0 +1,17 @@
+{{- /*
+  Splits the event pages in "pages" into upcoming and past events.
+  An event is past when its end (or start, if it has no end) is before
+  the build time. Returns a dict with "upcoming" (soonest first) and
+  "past" (most recent first).
+*/ -}}
+{{- $upcoming := slice }}
+{{- $past := slice }}
+{{- range sort . "Params.eventDate" }}
+  {{- $end := time.AsTime (.Params.eventEnd | default .Params.eventDate) }}
+  {{- if $end.Before now }}
+    {{- $past = $past | append . }}
+  {{- else }}
+    {{- $upcoming = $upcoming | append . }}
+  {{- end }}
+{{- end }}
+{{- return dict "upcoming" $upcoming "past" (collections.Reverse $past) }}
