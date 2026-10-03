@@ -71,6 +71,9 @@ New posts are drafts (`draft: true`). Remove that line to publish. Blog posts
 with a date in the future are not published until that date (after the next
 daily rebuild).
 
+The `authors` field is optional. See the commented example in
+[`archetypes/blog.md`](archetypes/blog.md).
+
 ## Deployment
 
 The [GitHub Actions workflow](.github/workflows/hugo.yaml) follows the
