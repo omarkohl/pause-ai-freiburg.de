@@ -1,0 +1,13 @@
+{{- /* Links to legal pages. A page appears only when it is published (not a draft). */ -}}
+{{- $links := slice -}}
+{{- range slice "imprint" "privacy" -}}
+  {{- $key := . -}}
+  {{- with where site.RegularPages "Params.translationKey" $key | first 1 -}}
+    {{- $links = $links | append (index . 0) -}}
+  {{- end -}}
+{{- end -}}
+{{- with $links -}}
+  <nav class="hx:flex hx:gap-4 hx:pt-6 hx:text-sm hx:justify-center hx:md:justify-start">
+    {{- range . }}<a class="hx:text-current hx:hover:underline" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end -}}
+  </nav>
+{{- end -}}
