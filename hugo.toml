@@ -72,6 +72,11 @@ timeZone = "Europe/Berlin"
       weight = 50
       [languages.de.menus.main.params]
         type = "search"
+    [[languages.de.menus.main]]
+      name = "Sprache"
+      weight = 60
+      [languages.de.menus.main.params]
+        type = "language-switch"
 
   [languages.en]
     label = "English"
@@ -103,3 +108,8 @@ timeZone = "Europe/Berlin"
       weight = 50
       [languages.en.menus.main.params]
         type = "search"
+    [[languages.en.menus.main]]
+      name = "Language"
+      weight = 60
+      [languages.en.menus.main.params]
+        type = "language-switch"
