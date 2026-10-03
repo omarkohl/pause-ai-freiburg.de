@@ -52,7 +52,7 @@ Wir sind eine lokale Gruppe von [PauseAI](https://pauseai.info) in Freiburg im B
 Wir setzen uns für eine internationale Pause bei der Entwicklung der gefährlichsten KI-Systeme ein –
 so lange, bis wir wissen, wie wir sie sicher bauen können.
 
-**[Mitmachen](/mitmachen/)** · **[Termine](/termine/)**
+**[Mitmachen](/mitmachen/)** · **[Termine](/termine/)** · **[Häufige Fragen](/faq/)**
 """
 
     [[languages.de.menus.main]]
@@ -63,6 +63,10 @@ so lange, bis wir wissen, wie wir sie sicher bauen können.
       name = "Blog"
       pageRef = "/blog"
       weight = 20
+    [[languages.de.menus.main]]
+      name = "FAQ"
+      pageRef = "/faq"
+      weight = 30
     [[languages.de.menus.main]]
       name = "Mitmachen"
       pageRef = "/mitmachen"
@@ -90,7 +94,7 @@ We are a local group of [PauseAI](https://pauseai.info) in Freiburg im Breisgau,
 We campaign for an international pause on the development of the most dangerous AI systems –
 until we know how to build them safely.
 
-**[Get involved](/en/join/)** · **[Events](/en/events/)**
+**[Get involved](/en/join/)** · **[Events](/en/events/)** · **[FAQ](/en/faq/)**
 """
 
     [[languages.en.menus.main]]
@@ -101,6 +105,10 @@ until we know how to build them safely.
       name = "Blog"
       pageRef = "/blog"
       weight = 20
+    [[languages.en.menus.main]]
+      name = "FAQ"
+      pageRef = "/faq"
+      weight = 30
     [[languages.en.menus.main]]
       name = "Get involved"
       pageRef = "/join"
