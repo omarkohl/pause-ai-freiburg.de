@@ -1,14 +1,8 @@
+{{- /* Renders the event pages in the context as Hextra cards. */ -}}
+{{- $cards := "" }}
 {{- range . }}
-<article class="post-entry">
-  <header class="entry-header">
-    <h2>{{ .Title }}</h2>
-  </header>
-  {{- with .Summary }}
-  <div class="entry-content">
-    <p>{{ . | plainify | htmlUnescape }}</p>
-  </div>
-  {{- end }}
-  <footer class="entry-footer">{{ partial "event_meta.html" . }}</footer>
-  <a class="entry-link" aria-label="{{ .Title | plainify }}" href="{{ .Permalink }}"></a>
-</article>
+  {{- $subtitle := partial "event_meta.html" . | plainify | htmlUnescape }}
+  {{- with .Summary }}{{ $subtitle = printf "%s<br>%s" $subtitle (. | plainify | htmlUnescape) }}{{ end }}
+  {{- $cards = printf "%s%s" $cards (partial "shortcodes/card" (dict "page" . "link" .RelPermalink "title" .Title "subtitle" $subtitle "icon" "calendar")) }}
 {{- end }}
+{{- partial "shortcodes/cards" (dict "cols" 1 "content" ($cards | safeHTML)) }}

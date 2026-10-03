@@ -1,20 +1,16 @@
-{{- define "main" }}
-<article class="post-single">
-  <header class="post-header">
-    {{ partial "breadcrumbs.html" . }}
-    <h1 class="post-title">{{ .Title }}</h1>
-    {{- with .Description }}
-    <div class="post-description">{{ . }}</div>
-    {{- end }}
-    <div class="post-meta">
-      {{- partial "event_meta.html" . -}}
-      {{- partial "translation_list.html" . -}}
-      {{- partial "edit_post.html" . -}}
-    </div>
-  </header>
-  {{- partial "cover.html" (dict "cxt" . "IsSingle" true "isHidden" false) }}
-  {{- with .Content }}
-  <div class="post-content md-content">{{ . }}</div>
-  {{- end }}
-</article>
-{{- end }}
+{{ define "main" }}
+  <div class="hx:mx-auto hx:flex hextra-max-page-width">
+    {{ partial "sidebar.html" (dict "context" . "disableSidebar" true "displayPlaceholder" true) }}
+    {{ partial "toc.html" . }}
+    <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--hextra-navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8 hx:pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+      <main id="content" class="hx:w-full hx:min-w-0 hextra-max-content-width hx:px-6 hx:pt-4 hx:md:px-12">
+        {{ partial "breadcrumb.html" (dict "page" . "enable" true) }}
+        <div class="content">
+          <h1>{{ .Title }}</h1>
+          <p class="hx:text-gray-500 hx:dark:text-gray-400">{{ partial "event_meta.html" . }}</p>
+          {{ .Content }}
+        </div>
+      </main>
+    </article>
+  </div>
+{{ end }}

@@ -1,0 +1,17 @@
+{{- /*
+  Lists the next upcoming events.
+
+  @param {int} limit Maximum number of events (default 3).
+
+  @example {{< upcoming-events limit=3 >}}
+*/ -}}
+{{- $limit := .Get "limit" | default 3 }}
+{{- with index (where site.Sections "Type" "events") 0 }}
+  {{- $events := partial "events.html" .RegularPages }}
+  {{- with $events.upcoming }}
+    {{- partial "event_list.html" (first $limit .) }}
+  {{- else }}
+    <p>{{ i18n "no_upcoming_events" }}</p>
+  {{- end }}
+  <p class="hx:mt-4"><a class="hx:font-semibold hx:text-primary-600" href="{{ .RelPermalink }}">{{ i18n "all_events" }} →</a></p>
+{{- end }}

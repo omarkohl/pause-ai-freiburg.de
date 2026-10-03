@@ -8,30 +8,37 @@ timeZone = "Europe/Berlin"
 
 [module]
   [[module.imports]]
-    path = "github.com/adityatelange/hugo-PaperMod"
+    path = "github.com/imfing/hextra"
 
 [caches]
   [caches.images]
     dir = ":cacheDir/images"
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS"]
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true # needed for the HTML in the Hextra landing page
 
 [params]
-  env = "production"
-  defaultTheme = "auto"
-  mainSections = ["blog"]
-  ShowBreadCrumbs = true
-  ShowReadingTime = true
-  ShowPostNavLinks = true
-  ShowCodeCopyButtons = true
-  ShowToc = false
-  displayFullLangName = true
-  disableSpecial1stPost = true
-
-  [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/omarkohl/pause-ai-freiburg.de"
+  [params.navbar]
+    displayTitle = true
+    displayLogo = false
+  [params.page]
+    width = "normal"
+  [params.theme]
+    default = "system"
+    displayToggle = true
+  [params.footer]
+    enable = true
+    displayCopyright = true
+    displayPoweredBy = true
+  [params.search]
+    enable = true
+    type = "flexsearch"
+  [params.blog.list]
+    displayTags = false
 
 [languages]
   [languages.de]
@@ -42,18 +49,6 @@ timeZone = "Europe/Berlin"
     copyright = "Inhalte unter [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.de), sofern nicht anders angegeben."
     [languages.de.params]
       description = "PauseAI Freiburg – Wir setzen uns für eine internationale Pause bei der Entwicklung der gefährlichsten KI-Systeme ein."
-      [languages.de.params.editPost]
-        URL = "https://github.com/omarkohl/pause-ai-freiburg.de/edit/main/content/de"
-        appendFilePath = true
-      [languages.de.params.homeInfoParams]
-        Title = "PauseAI Freiburg"
-        Content = """
-Wir sind eine lokale Gruppe von [PauseAI](https://pauseai.info) in Freiburg im Breisgau.
-Wir setzen uns für eine internationale Pause bei der Entwicklung der gefährlichsten KI-Systeme ein –
-so lange, bis wir wissen, wie wir sie sicher bauen können.
-
-**[Mitmachen](/mitmachen/)** · **[Termine](/termine/)** · **[Häufige Fragen](/faq/)**
-"""
 
     [[languages.de.menus.main]]
       name = "Termine"
@@ -73,8 +68,9 @@ so lange, bis wir wissen, wie wir sie sicher bauen können.
       weight = 40
     [[languages.de.menus.main]]
       name = "Suche"
-      pageRef = "/suche"
       weight = 50
+      [languages.de.menus.main.params]
+        type = "search"
 
   [languages.en]
     label = "English"
@@ -84,18 +80,6 @@ so lange, bis wir wissen, wie wir sie sicher bauen können.
     copyright = "Content licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), unless otherwise marked."
     [languages.en.params]
       description = "PauseAI Freiburg – We campaign for an international pause on the development of the most dangerous AI systems."
-      [languages.en.params.editPost]
-        URL = "https://github.com/omarkohl/pause-ai-freiburg.de/edit/main/content/en"
-        appendFilePath = true
-      [languages.en.params.homeInfoParams]
-        Title = "PauseAI Freiburg"
-        Content = """
-We are a local group of [PauseAI](https://pauseai.info) in Freiburg im Breisgau, Germany.
-We campaign for an international pause on the development of the most dangerous AI systems –
-until we know how to build them safely.
-
-**[Get involved](/en/join/)** · **[Events](/en/events/)** · **[FAQ](/en/faq/)**
-"""
 
     [[languages.en.menus.main]]
       name = "Events"
@@ -115,5 +99,6 @@ until we know how to build them safely.
       weight = 40
     [[languages.en.menus.main]]
       name = "Search"
-      pageRef = "/search"
       weight = 50
+      [languages.en.menus.main.params]
+        type = "search"

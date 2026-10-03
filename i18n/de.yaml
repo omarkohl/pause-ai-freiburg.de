@@ -8,3 +8,5 @@
   translation: "Alle Termine"
 - id: latest_posts
   translation: "Neues aus dem Blog"
+- id: copyright
+  translation: "Inhalte unter [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.de), sofern nicht anders angegeben."

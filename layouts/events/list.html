@@ -1,27 +1,25 @@
-{{- define "main" }}
-<header class="page-header">
-  {{- partial "breadcrumbs.html" . }}
-  <h1>{{ .Title }}</h1>
-  {{- with .Description }}
-  <div class="post-description">{{ . | markdownify }}</div>
-  {{- end }}
-</header>
-
-{{- with .Content }}
-<div class="post-content md-content">{{ . }}</div>
-{{- end }}
-
-{{- $events := partial "events.html" .RegularPages }}
-
-<h2>{{ i18n "upcoming_events" }}</h2>
-{{- with $events.upcoming }}
-{{- partial "event_list.html" . }}
-{{- else }}
-<p>{{ i18n "no_upcoming_events" }}</p>
-{{- end }}
-
-{{- with $events.past }}
-<h2>{{ i18n "past_events" }}</h2>
-{{- partial "event_list.html" . }}
-{{- end }}
-{{- end }}
+{{ define "main" }}
+  <div class="hx:mx-auto hx:flex hextra-max-page-width">
+    {{ partial "sidebar.html" (dict "context" . "disableSidebar" true "displayPlaceholder" true) }}
+    <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--hextra-navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8 hx:pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+      <main id="content" class="hx:w-full hx:min-w-0 hextra-max-content-width hx:px-6 hx:pt-4 hx:md:px-12">
+        <div class="content">
+          <h1>{{ .Title }}</h1>
+          {{ with .Description }}<p>{{ . | markdownify }}</p>{{ end }}
+          {{ .Content }}
+          {{ $events := partial "events.html" .RegularPages }}
+          <h2>{{ i18n "upcoming_events" }}</h2>
+          {{ with $events.upcoming }}
+            {{ partial "event_list.html" . }}
+          {{ else }}
+            <p>{{ i18n "no_upcoming_events" }}</p>
+          {{ end }}
+          {{ with $events.past }}
+            <h2>{{ i18n "past_events" }}</h2>
+            {{ partial "event_list.html" . }}
+          {{ end }}
+        </div>
+      </main>
+    </article>
+  </div>
+{{ end }}

@@ -3,7 +3,7 @@
 Source of the [PauseAI Freiburg](https://pause-ai-freiburg.de) website.
 
 Built with [Hugo](https://gohugo.io) and the
-[PaperMod](https://github.com/adityatelange/hugo-PaperMod) theme. German is the
+[Hextra](https://imfing.github.io/hextra/) theme. German is the
 main language (served at `/`), English is served at `/en/`.
 
 ## Local development
@@ -115,7 +115,7 @@ Actions → **Build and deploy** → **Run workflow**.
 
 - **Hugo / Go:** change the versions in `mise.toml` (CI reads the Hugo version
   from there) and the `go` line in `go.mod`.
-- **Theme:** `hugo mod get -u github.com/adityatelange/hugo-PaperMod && hugo mod tidy`,
+- **Theme:** `hugo mod get -u github.com/imfing/hextra && hugo mod tidy`,
   then check the site locally.
 - **GitHub Actions:** Dependabot opens pull requests monthly.
 

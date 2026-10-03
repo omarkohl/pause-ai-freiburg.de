@@ -2,8 +2,6 @@
 title: "Häufige Fragen"
 description: "Antworten auf Fragen, die uns oft zu KI und zu PauseAI gestellt werden."
 translationKey: "faq"
-ShowToc: true
-TocOpen: true
 ---
 
 ## Was ist PauseAI?

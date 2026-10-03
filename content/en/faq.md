@@ -2,8 +2,6 @@
 title: "Frequently asked questions"
 description: "Answers to questions people often ask us about AI and PauseAI."
 translationKey: "faq"
-ShowToc: true
-TocOpen: true
 ---
 
 ## What is PauseAI?
