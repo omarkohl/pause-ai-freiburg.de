@@ -34,7 +34,7 @@ timeZone = "Europe/Berlin"
   [params.footer]
     enable = true
     displayCopyright = true
-    displayPoweredBy = true
+    displayPoweredBy = false
   [params.search]
     enable = true
     type = "flexsearch"
