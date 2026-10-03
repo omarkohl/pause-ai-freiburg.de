@@ -22,6 +22,7 @@ timeZone = "Europe/Berlin"
     unsafe = true # needed for the HTML in the Hextra landing page
 
 [params]
+  images = ["/images/og-image.png"] # social share preview (1200x675)
   [params.navbar]
     displayTitle = true
     displayLogo = false
