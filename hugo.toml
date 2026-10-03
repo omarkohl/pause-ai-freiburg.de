@@ -58,6 +58,10 @@ so lange, bis wir wissen, wie wir sie sicher bauen können.
       pageRef = "/termine"
       weight = 10
     [[languages.de.menus.main]]
+      name = "Blog"
+      pageRef = "/blog"
+      weight = 20
+    [[languages.de.menus.main]]
       name = "Suche"
       pageRef = "/suche"
       weight = 50
@@ -85,6 +89,10 @@ until we know how to build them safely.
       name = "Events"
       pageRef = "/events"
       weight = 10
+    [[languages.en.menus.main]]
+      name = "Blog"
+      pageRef = "/blog"
+      weight = 20
     [[languages.en.menus.main]]
       name = "Search"
       pageRef = "/search"

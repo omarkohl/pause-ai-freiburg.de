@@ -6,3 +6,5 @@
   translation: "No events are planned right now. Check back soon!"
 - id: all_events
   translation: "All events"
+- id: latest_posts
+  translation: "Latest from the blog"

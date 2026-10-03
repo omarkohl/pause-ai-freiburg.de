@@ -6,3 +6,5 @@
   translation: "Zurzeit sind keine Termine geplant. Schau bald wieder vorbei!"
 - id: all_events
   translation: "Alle Termine"
+- id: latest_posts
+  translation: "Neues aus dem Blog"
