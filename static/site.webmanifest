@@ -1,0 +1,11 @@
+{
+  "name": "PauseAI Freiburg",
+  "short_name": "PauseAI Freiburg",
+  "icons": [
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#ff9416",
+  "background_color": "#ff9416",
+  "display": "standalone"
+}
