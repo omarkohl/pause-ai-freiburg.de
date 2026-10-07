@@ -5,7 +5,10 @@ translationKey: "imprint"
 
 ## Angaben gemäß § 5 DDG
 
-TODO
+PauseAI Deutschland (Bürgerbewegung)
+c/o Ferraro
+Weisestr. 23
+12049 Berlin
 
 ## Kontakt
 
@@ -13,4 +16,4 @@ Email: omar@pause-ai-freiburg.de
 
 ## Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
 
-TODO, Anschrift wie oben.
+Omar Kohl, Anschrift wie oben.
